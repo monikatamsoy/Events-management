@@ -1,0 +1,36 @@
+<div class="uk-initial uk-child-width-1-2@m" uk-grid>
+  <div>
+    <h3>For</h3>
+    <h2>Better</h2>
+    <h1 id="typewriter">Management</h1>
+    <h1></h1>
+  </div>
+  <div>
+    <div class="uk-card uk-card-default uk-card-hover">
+      <div class="uk-card-media-bottom">
+        <button uk-toggle="target: .uk-button; mode: click; cls: uk-button-primary" class="uk-button uk-button-primary uk-margin-small-bottom uk-toggle">General Secretary</button>
+        <button uk-toggle="target: .uk-button; mode: click; cls: uk-button-primary" id="buttin" class="uk-button uk-button-default uk-margin-small-bottom ">Secretary</button>
+      </div>
+      <div class="uk-card-body">
+        <div>
+          <form method="post" action="/api/signin">
+            <legend class="uk-legend uk-text-danger">Sign in</legend>
+            <div class="uk-margin">
+              <input class="uk-input" id="username" name="username" placeholder="Username" />
+            </div>
+            <div class="uk-margin">
+              <textarea class="uk-textarea" id="password" name="password" placeholder="Password" rows="1"></textarea>
+            </div>
+            <div class="uk-margin uk-text-muted uk-text-center">
+              <span id="error-div"></span>
+            </div>
+            <div class="uk-margin uk-text-center">
+              <input class="uk-button uk-button-danger post-button" value="Sign in" type="submit" /><br />
+              <button class="uk-button uk-button-text" uk-toggle="target: .uk-initial; animation:  uk-animation-slide-right,uk-animation-slide-left; queue: true">Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

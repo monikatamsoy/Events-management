@@ -1,0 +1,31 @@
+<% if (role) { %>
+<div id="my-id" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <form method="post" action="/api/mom">
+      <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Minutes of Meeting</legend>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" name="event" placeholder="Event">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" name="attendees" placeholder="Attendees">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="date" name="date" placeholder="Date of Meeting">
+        </div>
+
+        <div class="uk-margin">
+          <textarea class="uk-textarea" rows="5" name="agenda" placeholder="Agenda"></textarea>
+        </div>
+        <div class="uk-margin uk-text-center">
+          <input type="submit" class="uk-button uk-button-primary" value="Post">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<% } %>

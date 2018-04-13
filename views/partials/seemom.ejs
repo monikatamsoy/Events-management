@@ -1,0 +1,39 @@
+<div uk-grid>
+<div class="uk-width-1-4 uk-background-primary uk-height-viewport">dfd</div>
+  <div class="uk-width-3-4">
+    <div class="uk-width-1-1 uk-text-right">
+      <% if (role) { %>
+        <button class="uk-button uk-button-danger" uk-toggle="target: #my-id">Add minutes</button>
+      <% } %>
+      <a href="/logout" class="uk-button uk-button-text">Logout</a>
+    </div>
+<table class="uk-table uk-table-striped">
+    <thead>
+        <tr>
+            <th>S. No.</th>
+            <th>Event</th>
+            <th>Attendees</th>
+            <th>Agenda</th>
+            <th>Date of Meeting</th>
+            <% if (role == 0) { %>
+            <th>Reported</th>
+            <% } %>
+        </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < data.length; i++) { %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= data[i].event %></td>
+            <td><%= data[i].attendees %></td>
+            <td><%= data[i].agenda %></td>
+            <td><%= data[i].date %></td>
+            <% if (role == 0) { %>
+            <td><%= data[i].username %></td>
+            <% } %>
+        </tr>
+      <% } %>
+    </tbody>
+</table>
+</div>
+</div>

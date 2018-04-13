@@ -3,8 +3,10 @@ var mongoose = require('mongoose'),
 
 var UserSchema = new schema({
   username: String,
-  password: String
-})
+  password: String,
+  email: String,
+  role: String
+}, {timestamps: { createdAt: 'created_at' }})
 
 var user = mongoose.model('users', UserSchema, 'users');
 module.exports = user;

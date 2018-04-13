@@ -1,0 +1,31 @@
+<div class="uk-card uk-card-body uk-card-default uk-initial" hidden>
+  <form method="post" action="/api/register">
+    <div>
+      <legend class="uk-legend uk-text-danger">Sign up</legend>
+      <div class="uk-margin">
+        <input class="uk-input" id="username" name="username" placeholder="Username" />
+      </div>
+      <div class="uk-margin">
+        <textarea class="uk-textarea" id="emailid" name="email" placeholder="Your emailid" rows="1"></textarea>
+      </div>
+      <div class="uk-margin">
+        <select class="uk-select" name="role">
+          <option>G. Sec</option>
+          <option>Secretary</option>
+        </select>
+      </div>
+      <div class="uk-margin">
+        <textarea class="uk-textarea" id="setpassword" name="password" placeholder="Set a Password" rows="1"></textarea>
+      </div>
+      <div class="uk-margin uk-text-muted uk-text-center">
+        <span id="error-div"></span>
+      </div>
+      <div class="uk-margin uk-text-center">
+        <input class="uk-button uk-button-danger post-button" value="Sign up" type="submit" /><br />
+
+      </div>
+    </div>
+  </form>
+
+  <button class="uk-button uk-button-primary " uk-toggle="target: .uk-initial; animation:  uk-animation-slide-right,uk-animation-slide-left; queue: true">Go back</button>
+</div>
