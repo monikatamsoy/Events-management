@@ -10,7 +10,7 @@ router.get('/', authUser, function(req, res, next) {
 
 router.get("/dashboard", auth, getPosts, function(req, res, next) {
   console.log(req.body.data)
-  res.render('dashboard', {data: req.body.data , role: req.body.role})
+  res.render('dashboard', {data: req.body.data , role: req.body.role , cookies: req.cookies })
 })
 
 router.get("/logout", function(req, res, next) {

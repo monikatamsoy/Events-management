@@ -10,7 +10,11 @@ router.post('/register', createUser, createToken)
 
 router.post('/signin', checkUser, createToken)
 
-router.post('/mom', createPost, function(req, res, next) {
+router.post('/mom',authcheck, createPost, function(req, res, next) {
+  res.redirect("/dashboard")
+})
+
+router.post('/editprofile', authcheck, editprofile, function(req, res, next) {
   res.redirect("/dashboard")
 })
 
@@ -24,6 +28,14 @@ function createPost(req, res, next) {
       next()
     }
   })
+}
+
+function authcheck(req, res, next){
+  if (req.cookies.username){
+    next()
+  }else {
+    res.redirect('/')
+  }
 }
 
 function auth(req, res, next) {
@@ -62,6 +74,7 @@ function checkUser(req, res, next) {
     } else if (data) {
       req.body.id = data["_id"]
       req.body.name = data["username"]
+      req.body.email = data.email
       next()
     } else {
       res.render('index', {error: "Check credentials"})
@@ -71,8 +84,26 @@ function checkUser(req, res, next) {
 
 function createToken(req, res, next) {
   res.cookie('_sssid', req.body.id.toString())
-  res.cookie('username', req.body.name)
+  res.cookie('username', req.body.name || '-')
+  res.cookie('email', req.body.email || '-')
+  res.cookie('post', req.body.post || '-')
+  res.cookie('contact', req.body.contact || '-')
   res.redirect("/dashboard")
+}
+
+function editprofile(req, res, next){
+  user.findOneAndUpdate({username: req.cookies.username}, req.body, function(error, data){
+    if (data){
+      // console.log(data.email)
+      // res.json(data)
+      res.cookie('email', req.body.email || '-')
+      res.cookie('post', req.body.post || '-')
+      res.cookie('contact', req.body.contact || '-')
+      next()
+    }else if(error){
+      // console.log(error)
+    }
+  })
 }
 
 module.exports = router;

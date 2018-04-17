@@ -1,11 +1,33 @@
 <div uk-grid>
-<div class="uk-width-1-4 uk-background-primary uk-height-viewport">dfd</div>
+<div   class="uk-position-relative uk-width-1-4 uk-background-muted uk-height-viewport">
+  <div id="gsec-details" uk-grid>
+
+
+  <div>
+    <div class="uk-padding-large uk-background-primary uk-text-center">
+      <img src="4.jpg"    width="100" height="100"> <br/>
+  </div>
+  <div class="uk-text-center">
+    <h3 class="uk-text-middle uk-margin-medium-top uk-text-center"><%= cookies.username %></h3>
+    <h4 class="uk-text-middle uk-margin-small-top uk-text-center"><%= cookies.email %></h4>
+    <h4 class="uk-text-middle uk-margin-small-top uk-text-center"><%= cookies.post %></h4>
+    <h4 class="uk-text-middle uk-margin-small-top uk-text-center"><%= cookies.contact %></h4>
+    <button uk-toggle="target:#profile " class="uk-button uk-button-primary  uk-margin-small-bottom  uk-toggle">Edit Profile</button>
+  </div>
+  <div class="uk-text-center uk-position-bottom">
+    <a href="/logout" class="uk-button uk-button-primary">Logout</a>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
   <div class="uk-width-3-4">
-    <div class="uk-width-1-1 uk-text-right">
+    <div class="uk-width-1-1 uk-text-right uk-padding">
       <% if (role) { %>
-        <button class="uk-button uk-button-danger" uk-toggle="target: #my-id">Add minutes</button>
+        <button class="uk-button uk-button-danger" uk-toggle="target: #my-id">Add Minutes of Meeting</button>
       <% } %>
-      <a href="/logout" class="uk-button uk-button-text">Logout</a>
     </div>
 <table class="uk-table uk-table-striped">
     <thead>
@@ -36,4 +58,31 @@
     </tbody>
 </table>
 </div>
+</div>
+<div id="profile" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <form method="post" action="/api/editprofile">
+      <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Edit Profile</legend>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" value="<%= cookies.post %>" name="post" placeholder="Post for Secretary">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" value="<%= cookies.contact %>" name="contact" placeholder="Contact No.">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" value="<%= cookies.email %>" name="email" placeholder="Email">
+        </div>
+
+
+        <div class="uk-margin uk-text-center">
+          <input type="submit" class="uk-button uk-button-primary" value="Save" >
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
