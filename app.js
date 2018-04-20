@@ -14,7 +14,9 @@ var app = express();
 var mongoose = require('mongoose');
 // var bodyParser = require("body-parser");
 
-mongoose.connect('mongodb://localhost/flycraft');
+mongoose.connect('mongodb://monika:tamsoy@mycluster0-shard-00-00.mongodb.net:27017,mycluster0-shard-00-01.mongodb.net:27017,mycluster0-shard-00-02.mongodb.net:27017/eventsdb?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin', function(err,db) {
+  console.log(err)
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
