@@ -14,7 +14,7 @@ var app = express();
 var mongoose = require('mongoose');
 // var bodyParser = require("body-parser");
 
-mongoose.connect('mongodb://monika:tamsoy@mycluster0-shard-00-00.mongodb.net:27017,mycluster0-shard-00-01.mongodb.net:27017,mycluster0-shard-00-02.mongodb.net:27017/eventsdb?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin', function(err,db) {
+mongoose.connect('mongodb://monika:tamsoy@cluster0-shard-00-00-jjrmx.mongodb.net:27017,cluster0-shard-00-01-jjrmx.mongodb.net:27017,cluster0-shard-00-02-jjrmx.mongodb.net:27017/eventsdb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin', function(err,db) {
   console.log(err)
 });
 
