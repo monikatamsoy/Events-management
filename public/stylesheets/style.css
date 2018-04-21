@@ -1,8 +1,12 @@
 body {
   position: relative;
   height: 100%;
-
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 
@@ -12,23 +16,19 @@ body {
 }
 
 #typewriter  {
-
-
   display: inline-block;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
-  animation:
-    typing 7.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 90% }
+  to { width: 360px }
 }
 
 /* The typewriter cursor effect */
@@ -37,76 +37,16 @@ body {
   10% { border-color: orange; }
 }
 
-
-/* .uk-card {
-    position: relative;
-    width: 80%;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /*padding: 20px;
-}
-    width: 50%;
-    margin-right: 60px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-  } */
-
-/* #text >h3 {
-    font-size: 1.5rem;
-    line-height: 1;
-    font-family: monospace;
-color: white;
-}
-#text >h2{
-  font-family: monospace;
-  font-size: 55px;
-color: white;
-} */
-
-
 .text-imp.heading {
   font-family: monospace!important;
   color: white!important;
 }
-/* #signup {
 
-   position: relative;
-   max-width: 35%;
-   margin: ;
-   position: relative;
-   align-items: ;
-   margin-left: auto;
-   margin-right: auto;
-
-   margin-bottom: auto;
-}
-#signup-form {
-    display: block;
-    position: relative;
-    width: 400px;
-
-
-} */
-.uk-container-expand {
-    max-width: none;
-    height: -webkit-fill-available;
-    background-image: url("3.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.uk-initial {
-    display: flex;
-    margin: 140px;
-    max-height: 100% ;
-    max-width: 70%
-    position: relative;
-    background-color: #41a9c7;
-    opacity: 1;
-    justify-content: space-between;
-    /* background-color: #1111; */
-}
 #gsec-details{
   display: grid;
 
+}
+
+.uk-background-blue {
+  background-color: #41a9c7;
 }
